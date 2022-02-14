@@ -38,7 +38,7 @@ async function INIT() {
             }
 
         }
-        return conn;
+        return db;
     } catch (error) {
         console.log('Error in INIT DATABASE : ', error);
         throw error;

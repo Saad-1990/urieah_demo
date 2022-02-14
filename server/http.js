@@ -38,7 +38,7 @@ let conn;
     /**
      * Sends the HTML to the client where all the client side stuff for generating the event and connecting to server has been handled
      */
-    res.sendFile(__dirname + '/views/assets/html/index.html');
+    res.sendFile(__dirname + '/views/assets/html/index.html'); 
   });
 
 
@@ -55,10 +55,10 @@ let conn;
     if (!req.body.hasOwnProperty('item')) res.status(402).send({ status: 'Bad Request', msg: 'item Missing in payload' });
     let collection = conn.collection('students');
 
-    let paylaod = {};
+    let payload = {};
     if (req.body.hasOwnProperty('userid')) payload['userid'] = req.body['userid'];
-    if (req.body.hasOwnProperty('userID')) paylaod['userID'] = req.body['userid'];
-    if (req.body.hasOwnProperty('group')) paylaod['group'] = req.body['group'];
+    if (req.body.hasOwnProperty('userID')) payload['userID'] = req.body['userid'];
+    if (req.body.hasOwnProperty('group')) payload['group'] = req.body['group'];
 
     payload.timestamp = Date.now()
     payload.item = req.body.item;
