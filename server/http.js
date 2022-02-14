@@ -52,7 +52,7 @@ let conn;
      * Inserting data with Rest API
      */
     console.log(req.body);
-    if (!req.body.hasOwnProperty('item')) res.status(402).send({ status: 'Bad Request', msg: 'item Missing in payload' });
+    if (!req.body.hasOwnProperty('item')) return res.status(402).send({ status: 'Bad Request', msg: 'item Missing in payload' });
     let collection = conn.collection('students');
 
     let payload = {};
